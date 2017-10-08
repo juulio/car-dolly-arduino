@@ -1,4 +1,8 @@
 /*
+	Bitrate 57600
+	Selected Device path: "/dev/cu.usbmodem1411"
+
+
 	LOADER EVENTS
 
 	JQuery is not used here intentionally making the framework core elements independed from it.
@@ -30,7 +34,7 @@ Involt.prototype.addToLoaderList = function(name){
 
 	device.addEventListener("click", changeDevice);
 
-	document.getElementById('loader-ports').appendChild(device);
+	// document.getElementById('loader-ports').appendChild(device);
 
 };
 
@@ -92,8 +96,14 @@ if(loaderOnLaunch){
 		
 	};
 
-	document.getElementById('loader-connect').addEventListener("click", startConnecting);
+	// -------------------------------
+	// Connect Directly to our Arduino
+	// involt.selectedDevice.path = /dev/cu.usbmodem1411
+	// bitrate = 57600
+	involt.connect("/dev/cu.usbmodem1411", 57600);
 
+	// document.getElementById('loader-connect').addEventListener("click", startConnecting);
+	
 	if(involt.stillConnectedDevices.length>0){
 
 		document.getElementById('loader-resume').style.display = "block";

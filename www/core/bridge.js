@@ -19,7 +19,7 @@ var gotData = function(receiveInfo){
 	if (isBluetooth && receiveInfo.socketId !== involt.id) return;
 
 	var encodedString = involt.receivedStringConvert(receiveInfo.data);
-	//console.log(encodedString);
+	// console.log(encodedString);
 
 	var matchingPattern = /[AF][^EAF]+\E/g;
 	var dataBlock = encodedString.match(matchingPattern);
