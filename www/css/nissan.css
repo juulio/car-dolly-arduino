@@ -1,0 +1,25 @@
+/* custom code for Nissan project - 2017 Pulse */
+.nissan {
+	width: 1023px;
+	height: 500px;
+	position: absolute;
+	background-color: #AABBCC;
+}
+
+.block1 {
+	top: 0;
+	width: 500px;
+	height: 500px;
+	left: 400px;
+	position: relative;
+	background-color: #FF0000;
+}
+
+.block2 {
+	top: 0;
+	width: 500px;
+	height: 500px;
+	left: 100px;
+	position: relative;
+	background-color: #00FF00;
+}
