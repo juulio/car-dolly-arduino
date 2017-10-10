@@ -11,8 +11,8 @@
             "128": "www/img/icons/desktop/icon128.png" },
   "window":{
     /*"fullscreen": true, */
-    "width": 1200,
-    "height": 600
+    "width": 1000,
+    "height": 750
   }, 
   "manifest_version": 2
 }
