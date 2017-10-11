@@ -110,26 +110,32 @@ hr {
 }
 #branding {
 	width: 100%;
-	background: #fff;
+	z-index: 10;
+	position: fixed;
 	}
 	#branding h1 {
 		width: 940px;
-		padding: 10px 15px;
+		color: #000000;
 		margin: 0 auto;
-		text-transform: uppercase;
 		font-size: 18px;
 		font-weight: bold;
+		padding: 10px 15px;
+		text-transform: uppercase;
+		text-shadow: 2px 2px #FFFFFF;
 		}
 
 /* Nav
 *****************************************************************/
+/*Hide all navigations. May not be needed on the Nissan project*/
+nav {
+	display: none;
+}
 
 nav#primary {
 	z-index: 5;
 	position: fixed;
 	top: 50%;
 	right: 16px;
-	margin-top: -40px;
 }
 nav#primary li {
 	position: relative;
@@ -148,7 +154,6 @@ nav#primary a:hover, nav#primary a.active {
 nav#primary h1 {
 	position: absolute;
 	right: 22px;
-	top: -7px;
 	display: none;
 	padding: 4px 20px 4px 7px;;
 	color: #fff;
@@ -224,7 +229,6 @@ nav.next-prev {
 		#about {
 			position: absolute;
 			left: 4200px;
-			top: -120px;
 			}
 /* foreground (ballons/landscape) */
 #parallax-bg3 {

@@ -28,6 +28,7 @@
 	background-color: #00FF00;
 }
 
-.sensorPosition {
-	position: absolute;
+/* Styles for testing purposes */
+#content article {
+	border: solid 1px green;
 }
