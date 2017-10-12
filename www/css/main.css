@@ -113,20 +113,37 @@ hr {
 	z-index: 10;
 	position: fixed;
 	}
-	#branding h1 {
-		width: 940px;
-		color: #000000;
-		margin: 0 auto;
-		font-size: 18px;
+	#branding h1,
+	#branding h2 {
+		color: #ff0000;
+		font-size: 14px;
 		font-weight: bold;
-		padding: 10px 15px;
+		padding-left: 10px;
 		text-transform: uppercase;
-		text-shadow: 2px 2px #FFFFFF;
-		}
+		text-shadow: 1px 1px #FFFFFF;
+	}
+	/*------------------------------------------------------------------*/
+	#branding h1 {
+		/* Horizontal parallax will not work if this width is removed */
+		width: 940px;
+	}
+	/*------------------------------------------------------------------*/
+
+/* Video Container
+*****************************************************************/
+#video-container {
+	position: absolute;
+	z-index: 9;
+	left: 2000px;
+}
+
+#video01 {
+	display: none;
+}
 
 /* Nav
 *****************************************************************/
-/*Hide all navigations. May not be needed on the Nissan project*/
+/* Hide all navigations. May not be needed on the Nissan project */
 nav {
 	display: none;
 }
