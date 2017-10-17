@@ -11,8 +11,14 @@
             "128": "www/img/icons/desktop/icon128.png" },
   "window":{
     /*"fullscreen": true, */
+    
+    /* Production Environment */
+    // "width": 1080,
+    // "height": 1920
+
+    /* Development Environment */
     "width": 540,
-    "height": 840
+    "height": 840 // The BG images' height MUST match this height
   }, 
   "manifest_version": 2
 }

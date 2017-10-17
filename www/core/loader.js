@@ -82,7 +82,6 @@ if(isBluetooth){
 
 
 if(loaderOnLaunch){
-
 	var startConnecting = function(){
 
 		if(involt.selectedDevice == '') return;

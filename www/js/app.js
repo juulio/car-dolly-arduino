@@ -13,6 +13,7 @@ jQuery( document ).ready(function($) {
 	let totalWidth = $('body').height(); // pixels
 	let sensorRange = 1023; // Arduino Leonardo 
 	let scrollingFactor = totalWidth / sensorRange; //  5.18
+	// let scrollingFactor = 7.52
 
 
 	// Hide the Vertical Scroll Bar
@@ -27,6 +28,10 @@ jQuery( document ).ready(function($) {
 
 		// Simulate Horizontall scrolling with values from Arduino
 		$.scrollTo(	value*scrollingFactor,  30, {axis:'Y'} );
+		console.log('scroll position: ' + $(window).scrollTop());
+
+		// to check current Scroll position
+		// var scroll = $(window).scrollTop();
 
 		if(value > 400 && value < 500 && !videoIsPlaying) {
 			$('#video01').fadeIn( "slow", function() {

@@ -26,8 +26,8 @@
 		Use isPersistent to hold the connection after app shutdown. The session is returned when
 		relaunching. It's set to false by default because it blocks Arduino sketch upload process.
 		Changes from chrome apps to node-webkit made this currently not working (?).
-	*/
-	var defaultSerialPort = "/dev/cu.usbmodem14331";
+	*/						
+	var defaultSerialPort = "/dev/tty.usbmodem14131";
 	var isPersistent = false;
 	/*
 		BLUETOOTH DEFAULT ADDRESS
