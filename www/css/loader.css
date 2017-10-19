@@ -4,10 +4,6 @@
 	-webkit-tap-highlight-color: rgba(150, 150, 150, 0.1);
 }
 
-@font-face { font-family: 'LatoLight';   src: url('fonts/Lato-Light.ttf'); }
-@font-face { font-family: 'LatoRegular'; src: url('fonts/Lato-Regular.ttf'); }
-
-
 body{
 	margin:0;
 	padding:0;
@@ -42,7 +38,6 @@ iframe{
 	box-shadow: 0px 2px 4px #bbbbbb;
 	text-align: center;
 	font-size: 16px;
-	font-family: 'LatoLight';
 }
 
 #loader-logo-bg{
@@ -93,7 +88,6 @@ iframe{
 	padding:0;
 	width: 100%;
 	font-size: 16px;
-	font-family: 'LatoRegular';
 	outline:0;
 }
 
@@ -122,7 +116,6 @@ iframe{
 	line-height: 40px;
 	background: #FF461A;
 	color:white;
-	font-family: 'LatoLight';
 	font-size: 16px;
 	z-index: 101;
 }
