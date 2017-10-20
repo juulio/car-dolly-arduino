@@ -13,7 +13,7 @@
 // Init variables
 // UI elements
 let videoElement = document.getElementById('video01');
-
+let $video = $('#video01');
 // let $videoIsPlayingElement = $("#videoIsPlaying");
 let videoIsPlaying = false;
 let totalWidth = $('body').height(); // pixels
@@ -36,55 +36,73 @@ involtListenForPin[0] = function(index, value){
 	$.scrollTo(	value*scrollingFactor,  30, {axis:'Y'} );
 
 
-
-	// console.log('Sensor Position: ' + value);
 	// $videoIsPlayingElement.html("Video is Playing: " + videoIsPlaying);
 	// $('#wrapper').scrollTo(value);
 	// console.log('scroll position: ' + $(window).scrollTop());
 
 	// to check current Scroll position
 
-
 	//--------------------------------------------------
 	// Code for events
-	if(value > 240 && value < 500 && !videoIsPlaying) {
+	if(value > 100 && value < 200 && !videoIsPlaying) {
 	// if(value > 400 && value < 500 && !videoIsPlaying) {
-		console.log('video on screen');
-		$('#video01').fadeIn( "slow", function() {
-			// $(this).height(840);
-			// if (videoElement.webkitRequestFullscreen) {
-			// 	videoElement.webkitRequestFullscreen();
-				// }
-		
-			// if (videoElement.requestFullscreen) {
-			//   videoElement.requestFullscreen();
-			// } else if (videoElement.mozRequestFullScreen) {
-			//   videoElement.mozRequestFullScreen();
-			// } else if (videoElement.webkitRequestFullscreen) {
-			//   videoElement.webkitRequestFullscreen();
-			// }
-
-			videoElement.currentTime = 0; // Video plays from the beginning
-			videoElement.play();
+		$('#video-container').fadeIn( "slow", function(){
+			$video.get(0).play();
 			videoIsPlaying = true;
+			// videoElement.currentTime = 0; // Video plays from the beginning
+			// videoElement.play();
 
+			// $(this).height(840);	
+			var playPromise = videoElement.play();
 
-		
-			// let leftPosition = $('#video-container').position().left;
-			// leftPosition++;
-			// console.log(leftPosition);
-			// $('#video-container').css({'left':leftPosition+scrollingFactor});
-
-		
+			if (playPromise !== undefined) {
+				playPromise.then(_ => {
+					videoIsPlaying = true;
+					console.log('playing');// Automatic playback started!
+					// Show playing UI.
+				})
+				.catch(error => {
+					console.log('error playing video');
+				// Auto-play was prevented
+				// Show paused UI.
+				});
+			}
+			// videoElement.play();
 		});
 	}
 
-	if(value < 240 || value > 500 && videoIsPlaying){
-		// $('#video01').fadeOut( "fast", function() {
-		// 	videoElement.pause();
-		// 	videoIsPlaying = false;
-		// });
+	if( (value < 100 || value > 200) && videoIsPlaying){
+		$('#video-container').fadeOut( "fast", function() {
+			videoElement.pause();
+			videoIsPlaying = false;
+			console.log('paused');
+		});
 	}
 };
+
+
+
+$(function () {
+
+	// DOTS -  Toggle FadeIn / FadeOut
+    var $dotsElement = $('#parallax-bg5');
+    setInterval(function () {
+        $dotsElement.fadeIn(1000, function () {
+            $dotsElement.fadeOut(1000, function () {
+                $dotsElement.fadeIn(1500)
+            });
+        });
+    }, 1000);
+
+	// X RAY - Toggle horizontal Fade
+	// 4s FadeIn 4s FadeOut 1s wait
+	var $xrayElement = $('#parallax-bg3');
+    setInterval(function () {
+        $xrayElement.fadeIn(4000, function () {
+            $xrayElement.fadeOut(4000);
+        });
+    }, 800);
+
+});
 
 

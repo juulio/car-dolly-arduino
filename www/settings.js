@@ -27,7 +27,7 @@
 		relaunching. It's set to false by default because it blocks Arduino sketch upload process.
 		Changes from chrome apps to node-webkit made this currently not working (?).
 	*/						
-	var defaultSerialPort = "/dev/cu.usbmodem143241";
+	var defaultSerialPort = "/dev/cu.usbmodem14131";
 	var isPersistent = false;
 	/*
 		BLUETOOTH DEFAULT ADDRESS
